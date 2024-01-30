@@ -1,0 +1,6 @@
+all data sent from microcontroller has the following format:
+
+{type}#{time}#{value}
+
+type:
+- 'd' = data eg. sensor data and system state ()
