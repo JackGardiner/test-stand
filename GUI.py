@@ -15,7 +15,7 @@ from PIL import Image, ImageTk
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-plt.style.use('/Users/jackgardiner/Desktop/TEST STAND CONTROL/control_gui/graph_style.mplstyle')
+plt.style.use('graph_style.mplstyle')
 
 
 class RootGUI():
@@ -323,7 +323,7 @@ class PIDGUI():
 
         self.frame = ttk.LabelFrame(self.root, text='P&ID Diagram')
 
-        image_path = '/Users/jackgardiner/Desktop/TEST STAND CONTROL/control_gui/Liquid test stand.png'
+        image_path = 'Liquid test stand.png'
         image1 = Image.open(image_path)
         image1.thumbnail((500,500))
         test = ImageTk.PhotoImage(image1)

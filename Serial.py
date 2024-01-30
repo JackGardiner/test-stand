@@ -56,7 +56,7 @@ class SerialControl():
                 ComGUI.data.DecodeMsg()
                 # print(f"Decoded message: {ComGUI.data.msg}")
                 print(f'got an incoming message: {ComGUI.data.msg}')
-                ComGUI.conn.raw.serial_text.insert(END, f"{ComGUI.conn.data.msg}\n")
+                ComGUI.conn.raw.serial_text.insert(END, f"-- {ComGUI.data.msg[2]} CHANNEL(S) DETECTED -- \n")
                 ComGUI.conn.raw.serial_text.see(END)
                 if ComGUI.data.sync_ok in ComGUI.data.msg[1]:
                     if int(ComGUI.data.msg[2]) > 0:
@@ -91,6 +91,8 @@ class SerialControl():
 
         try:
             self.ser.write(ConnGUI.data.StartStream.encode('utf8'))
+            ConnGUI.raw.serial_text.insert(END, f"-- DATA STREAM STARTED --\n")
+            ConnGUI.raw.serial_text.see(END)
         except Exception as e:
             print(e)
 
