@@ -22,7 +22,7 @@ class RootGUI():
     """
     an instance of this class is created as the main window in 'Master.py'
     """
-    def __init__(self, serial, data, sequencer):
+    def __init__(self, serial, data):
         # set up main window parameters and import SerialControl() class as self.serial
         self.root = ttk.Window(themename='solar')
         self.root.title('TEST STAND CONTROL')

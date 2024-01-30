@@ -16,9 +16,6 @@ class DataMaster():
         temp = self.RowMsg.decode('utf-8').rstrip('\n')
         if len(temp) > 0:
             self.msg = temp.split("#")
-            # print(f"Before removing index :{self.msg}")
-            # del self.msg[0]
-            # print(f"After removing index :{self.msg}")
 
     def GenChannels(self):
         self.Channels = [f"Ch{ch}" for ch in range(self.SynchChannel)]

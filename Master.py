@@ -6,7 +6,6 @@ mySerial = SerialControl()
 myData = DataMaster()
 
 RootMaster = RootGUI(mySerial, myData)
-#RootMaster.root.focus_force()
 
 # run
 RootMaster.root.mainloop()
