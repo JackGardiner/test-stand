@@ -1,30 +1,17 @@
-class DataMaster():
-    def __init__(self):
+class DataManager():
+    def __init__(self) -> None:
         self.sync = "#?#\n"
         self.sync_ok = '!'
-        self.StartStream = "#S#\n"
-        self.StopStream = "#T#\n"
-        self.SynchChannel = 0
+        self.start_stream = "#S#\n"
+        self.stop_stream = "#T#\n"
+        self.sync_channel = 0
 
         self.msg = []
 
-        self.XData = []
-        self.YData = []
-        pass
+        self.data_t = []
+        self.data_x = []
 
-    def DecodeMsg(self):
-        temp = self.RowMsg.decode('utf-8').rstrip('\n')
+    def decode_msg(self):
+        temp = self.row_msg.decode('utf-8').rstrip('\n')
         if len(temp) > 0:
             self.msg = temp.split("#")
-
-    def GenChannels(self):
-        self.Channels = [f"Ch{ch}" for ch in range(self.SynchChannel)]
-
-    def buildYdata(self):
-        for _ in range(self.SynchChannel):
-            self.YData.append([])
-
-    def ClearData(self):
-        self.RowMsg = ""
-        self.msg = []
-        self.Ydata = []
